@@ -20,13 +20,15 @@ class MyAppState extends State<MyApp>{
   var count = 0;
 
   void answerQue() {
-    count += 1;
+    setState(() {
+      count += 1;
+    });
     print(count);
   }
 
   @override
   Widget build(BuildContext context) {
-    var question = ["What is your name?", "How are you?"];
+    var question = ["What is your name?", "How are you?","What is your name?", "How are you?","What is your name?", "How are you?"];
 
     return MaterialApp(
       home: Scaffold(
