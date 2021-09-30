@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+import './question.dart';
 
-class MyApp extends StatefulWidget {
+void main() => runApp(Myapp());
+
+class Myapp extends StatefulWidget {
+  Myapp({Key? key}) : super(key: key);
+
   @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return MyAppState();
-  }
+  _MyappState createState() => _MyappState();
 }
 
-class MyAppState extends State<MyApp> {
+class _MyappState extends State<Myapp> {
   var count = 0;
-
-  void answerQue() {
+  void action() {
     setState(() {
       count += 1;
     });
@@ -25,22 +25,21 @@ class MyAppState extends State<MyApp> {
     var que = [
       "What is your name?",
       "Where do you live?",
-      "Will you be my gf?",
-      "Will you be my gf_2?",
-      "Will you be my gf_3?"
+      "Do you like me?",
+      "Fuck you"
     ];
-    // TODO: implement build
+
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("This is tittle"),
+          title: Text("This is a tittle"),
         ),
         body: Column(
           children: [
-            Text(que[count]),
-            RaisedButton(child: Text("Button 1"), onPressed: answerQue),
-            RaisedButton(child: Text("Button 2"), onPressed: answerQue),
-            RaisedButton(child: Text("Button 3"), onPressed: answerQue),
+            Question(que[count]),
+            RaisedButton(child: Text("Button 1"), onPressed: action),
+            RaisedButton(child: Text("Button 2"), onPressed: action),
+            RaisedButton(child: Text("Button 3"), onPressed: action),
           ],
         ),
       ),
