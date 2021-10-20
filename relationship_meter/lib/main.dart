@@ -221,12 +221,6 @@ var que = [
     },
   ];
 
-
-
-
-
-
-
   void action(int a) {
     point += a;
     setState(() {
